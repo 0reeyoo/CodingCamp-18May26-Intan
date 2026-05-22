@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="top-panel">
+      <div class="time-card card">
+        <div class="time-block">
+          <div id="time" class="time"></div>
+          <div id="date" class="date"></div>
+        </div>
+        <div class="greeting-block">
+          <div class="greeting-line">Good <span id="greeting"></span>,</div>
+          <div class="name-block">
+            <span id="nameLabel">Guest</span>
+            <button id="editNameBtn" class="tiny-btn">Edit</button>
+          </div>
+        </div>
+      </div>
+      <div class="theme-card card">
+        <div class="theme-row">
+          <label for="themeToggle">Theme</label>
+          <button id="themeToggle" class="tiny-btn">Toggle</button>
+        </div>
+        <p class="small-text">Save your preferences locally.</p>
+      </div>
+    </section>
+
+    <section class="main-grid">
+      <article class="card timer-card">
+        <div class="section-title">Focus Timer</div>
+        <div class="timer-display">
+          <span id="minutes">25</span>:<span id="seconds">00</span>
+        </div>
+        <div class="timer-controls">
+          <button id="startBtn" class="primary-btn">Start</button>
+          <button id="stopBtn" class="secondary-btn">Stop</button>
+          <button id="resetBtn" class="secondary-btn">Reset</button>
+        </div>
+        <p class="small-text">Use the timer for focused work sessions.</p>
+      </article>
+
+      <article class="card todo-card">
+        <div class="section-title">Tasks</div>
+        <form id="taskForm" class="task-form">
+          <input id="taskInput" type="text" placeholder="Add a new task" autocomplete="off" />
+          <button type="submit" class="primary-btn">Add</button>
+        </form>
+        <ul id="taskList" class="task-list"></ul>
+      </article>
+
+      <article class="card links-card">
+        <div class="section-title">Quick Links</div>
+        <form id="linkForm" class="link-form">
+          <input id="linkName" type="text" placeholder="Link name" autocomplete="off" />
+          <input id="linkUrl" type="url" placeholder="URL" autocomplete="off" />
+          <button type="submit" class="primary-btn">Add Link</button>
+        </form>
+        <div id="linkList" class="link-list"></div>
+      </article>
+    </section>
+  </main>
+
+  <dialog id="nameDialog" class="dialog">
+    <form method="dialog" class="dialog-form">
+      <label>
+        Your name
+        <input id="nameInput" type="text" placeholder="Enter your name" maxlength="30" />
+      </label>
+      <div class="dialog-actions">
+        <button id="cancelName" type="button" class="secondary-btn">Cancel</button>
+        <button id="saveName" type="submit" class="primary-btn">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
